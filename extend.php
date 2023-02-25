@@ -38,7 +38,8 @@ class MyTemplate implements Template
 
     public function preview(File $file): string
     {
-        return '[STL=' . $file->url . ']';
+        return '[stl-file=' . $file->url . '] '."\n".
+               '[upl-file uuid='.$file->uuid.' size='.$file->humanSize.']'.$file->base_name.'[/upl-file]';
     }
 }
 
@@ -56,19 +57,18 @@ return [
     (new Extend\Formatter)
     ->configure(function (Configurator $config) {
          $config->BBCodes->addCustom(
-           '[STL={URL}]',
+          '[stl-file={URL}]',
            '<div class="iframe" style="--aspect-ratio: 16/9;">
-			   <iframe 
-				 src="/stl-viewer/?file={URL}"
-				 width="1600"
-				 height="900"
-				 frameborder="0"
-			   >
-			   </iframe>
-		   </div>'
+           <iframe 
+             src="/stl-viewer/?file={URL}"
+             width="1600"
+             height="900"
+             frameborder="0"
+           >
+           </iframe>
+         </div>'
         );
     }),
     (new Extend\ServiceProvider())
         ->register(MyServiceProvider::class)
 ];
-
