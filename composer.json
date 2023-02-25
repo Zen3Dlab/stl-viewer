@@ -1,0 +1,51 @@
+{
+    "name": "zen3d/stl-viewer",
+    "description": "Adds an STL-viewer BBCode. [STL url=URL]",
+    "keywords": [
+        "flarum"
+    ],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/Zen3Dlab/flarum-stl-viewer/issues",
+        "source": "https://github.com/Zen3Dlab/flarum-stl-viewer",
+        "forum": "https://discuss.flarum.org"
+    },
+    "homepage": "",
+    "funding": [
+        {
+            "type": "website",
+            "url": "http://forum.zen3d.hu/"
+        }
+    ],
+    "require": {
+        "flarum/core": "^1.0.0",
+        "fof/upload": "*"
+    },
+    "require-dev": {
+        "flarum/testing": "^1.0.0"
+    },
+    "authors": [
+        {
+            "name": "Zoltan Turi",
+            "email": "tz@zen3d.hu",
+            "role": "Creator"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "zen3d\\stl-viewer\\": "src/"
+        }
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "STL viewer",
+            "category": "feature",
+            "icon": {
+                "name": "fas fa-eye",
+                "backgroundColor": "#ddd",
+                "color": "#000"
+            }
+        }
+    }
+}
