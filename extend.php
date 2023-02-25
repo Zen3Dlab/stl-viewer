@@ -56,7 +56,7 @@ return [
     (new Extend\Formatter)
     ->configure(function (Configurator $config) {
          $config->BBCodes->addCustom(
-           '[STL]{url}[/STL]',
+           '[STL={url}]',
 		   '<div class="iframe" style="--aspect-ratio: 16/9;">
            <iframe 
              src="https://forum.zen3d.hu/stl-viewer/?file={url}"
