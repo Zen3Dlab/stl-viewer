@@ -7,8 +7,8 @@
     "type": "flarum-extension",
     "license": "MIT",
     "support": {
-        "issues": "https://github.com/Zen3Dlab/flarum-stl-viewer/issues",
-        "source": "https://github.com/Zen3Dlab/flarum-stl-viewer",
+        "issues": "https://github.com/Zen3Dlab/stl-viewer/issues",
+        "source": "https://github.com/Zen3Dlab/stl-viewer",
         "forum": "https://discuss.flarum.org"
     },
     "homepage": "",
