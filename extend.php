@@ -38,8 +38,7 @@ class MyTemplate implements Template
 
     public function preview(File $file): string
     {
-        return '[stl-file=' . $file->url . '] '."\n".
-               '[upl-file uuid='.$file->uuid.' size='.$file->humanSize.']'.$file->base_name.'[/upl-file]';
+        return '[stl-file name='.$file->base_name.' url='.$file->url.' uuid='.$file->uuid.' size='.$file->humanSize.']';
     }
 }
 
@@ -57,8 +56,8 @@ return [
     (new Extend\Formatter)
     ->configure(function (Configurator $config) {
          $config->BBCodes->addCustom(
-          '[stl-file={URL}]',
-           '<div class="iframe" style="--aspect-ratio: 16/9;">
+          '[stl-file name={SIMPLETEXT1} url={URL} uuid={IDENTIFIER} size={SIMPLETEXT2}]',
+           '<div class="stliframe" style="--aspect-ratio: 16/9;">
            <iframe 
              src="/stl-viewer/?file={URL}"
              width="1600"
@@ -66,6 +65,11 @@ return [
              frameborder="0"
            >
            </iframe>
+		   <div class="StlButtonGroup" data-fof-upload-download-uuid="{IDENTIFIER}">
+			<div class="Button hasIcon Button--icon Button--primary"><i class="fas fa-download"></i></div>
+			<div class="Button">{SIMPLETEXT1}</div>
+			<div class="Button">{SIMPLETEXT2}</div>
+		   </div>
          </div>'
         );
     }),
