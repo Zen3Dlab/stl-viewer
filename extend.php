@@ -38,7 +38,7 @@ class MyTemplate implements Template
 
     public function preview(File $file): string
     {
-        return '[STL]' . $file->url . '[/STL]';
+        return '[STL=' . $file->url . ']';
     }
 }
 
@@ -56,16 +56,16 @@ return [
     (new Extend\Formatter)
     ->configure(function (Configurator $config) {
          $config->BBCodes->addCustom(
-           '[STL={url}]',
-		   '<div class="iframe" style="--aspect-ratio: 16/9;">
-           <iframe 
-             src="https://forum.zen3d.hu/stl-viewer/?file={url}"
-             width="1600"
-             height="900"
-             frameborder="0"
-           >
-           </iframe>
-         </div>'
+           '[STL={URL}]',
+           '<div class="iframe" style="--aspect-ratio: 16/9;">
+			   <iframe 
+				 src="/stl-viewer/?file={URL}"
+				 width="1600"
+				 height="900"
+				 frameborder="0"
+			   >
+			   </iframe>
+		   </div>'
         );
     }),
     (new Extend\ServiceProvider())
