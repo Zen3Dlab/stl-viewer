@@ -23,12 +23,12 @@ class MyTemplate implements Template
 {
     public function tag(): string
     {
-        return 'myuniquetemplatename';
+        return 'stlviewerbbcode';
     }
 
     public function name(): string
     {
-        return 'My template name in the admin panel';
+        return 'STL viewer bbcode';
     }
 
     public function description(): string
