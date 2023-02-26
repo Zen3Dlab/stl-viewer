@@ -38,7 +38,7 @@ class MyTemplate implements Template
 
     public function preview(File $file): string
     {
-        return '[stl-file name='.$file->base_name.' url='.$file->url.' uuid='.$file->uuid.' size='.$file->humanSize.' path='.$file->path.']';
+        return '[stl-file name='.$file->base_name.' path='.$file->path.' uuid='.$file->uuid.' size='.$file->humanSize.']';
     }
 }
 
