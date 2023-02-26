@@ -38,7 +38,7 @@ class MyTemplate implements Template
 
     public function preview(File $file): string
     {
-        return '[stl-file name='.$file->base_name.' url='.$file->url.' uuid='.$file->uuid.' size='.$file->humanSize.']';
+        return '[stl-file name='.$file->base_name.' url='.$file->url.' uuid='.$file->uuid.' size='.$file->humanSize.' path='.$file->path.']';
     }
 }
 
@@ -56,10 +56,10 @@ return [
     (new Extend\Formatter)
     ->configure(function (Configurator $config) {
          $config->BBCodes->addCustom(
-          '[stl-file name={SIMPLETEXT1} url={URL} uuid={IDENTIFIER} size={SIMPLETEXT2}]',
+          '[stl-file name={SIMPLETEXT1} path={URL} uuid={IDENTIFIER} size={SIMPLETEXT2}]',
            '<div class="stliframe" style="--aspect-ratio: 16/9;">
            <iframe 
-             src="/stl-viewer/?file={URL}"
+             src="/stl-viewer/?file=/assets/files/{URL}"
              width="1600"
              height="900"
              frameborder="0"
