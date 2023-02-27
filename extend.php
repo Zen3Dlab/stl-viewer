@@ -59,7 +59,7 @@ return [
           '[stl-file name={SIMPLETEXT1} path={URL} uuid={IDENTIFIER} size={SIMPLETEXT2}]',
            '<div class="stliframe" style="--aspect-ratio: 16/9;">
            <iframe 
-             src="/stl-viewer/?file=/assets/files/{URL}"
+             src="/stl-viewer/?file=/assets/files/{URL}&color='.document.querySelector('meta[name="color-scheme"]').content.'"
              width="1600"
              height="900"
              frameborder="0"
