@@ -21,4 +21,8 @@ php flarum cache:clear
 ## Links
 
 - [GitHub](https://https://github.com/Zen3Dlab/flarum-stl-viewer)
-- [Discuss](https://discuss.flarum.org/)
+- Discuss
+- [Sample](https://forum.zen3d.hu/d/32-stl-falj-feltoltes-beagyazott-nezegeto)
+
+
+
